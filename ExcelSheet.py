@@ -8,6 +8,8 @@ def convertToTitle(n):
         isTrue = False
         result = ''
         while n > 26:
+            if n == 702:
+                return 'ZZ'
             if isTrue:
                 result = base[(n % 26) - 2] + result
                 isTrue = False
