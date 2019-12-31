@@ -59,7 +59,8 @@ class Solution:
                 if self.ans == 0:
                     self.ans = move
                 else:
-                    min(self.ans, move)
+                    print(self.ans, move)
+                    self.ans = min(self.ans, move)
             visited.add((tail, head))
             for ntail, nhead, dir in [[(tail[0] + 1, tail[1]), (head[0] + 1, head[1]), 'down'],
                                  [(tail[0], tail[1] + 1), (head[0], head[1] + 1), 'right'],
@@ -79,12 +80,17 @@ class Solution:
         return self.ans
 
 
-print(Solution.minimumMoves(Solution, [[0,0,0,0,0,1],
-                                       [1,1,0,0,1,0],
-                                       [0,0,0,0,1,1],
-                                       [0,0,1,0,1,0],
-                                       [0,1,1,0,0,0],
-                                       [0,1,1,0,0,0]]
+print(Solution.minimumMoves(Solution, [[0,0,0,0,0,0,0,0,0,0],
+                                       [0,0,0,0,0,0,0,0,0,0],
+                                       [0,0,1,1,0,0,1,0,0,0],
+                                       [0,0,1,0,0,0,0,0,0,0],
+                                       [1,0,0,0,0,0,0,0,0,0],
+                                       [0,0,0,0,0,0,0,0,0,0],
+                                       [0,0,0,1,0,0,0,0,1,0],
+                                       [0,0,0,0,0,0,1,0,0,1],
+                                       [0,1,0,0,1,0,0,0,0,0],
+                                       [0,0,0,0,0,1,0,0,0,0]]
+
 
 ))
 
