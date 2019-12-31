@@ -17,4 +17,4 @@ def findAndReplacePattern(words, pattern):
     return ans
 
 
-print(findAndReplacePattern(words = ["abc], pattern = "abb"))
+print(findAndReplacePattern(words = ["abc"], pattern = "abb"))
