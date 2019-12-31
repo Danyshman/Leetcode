@@ -9,5 +9,5 @@ def longestCommonSubsequence(text1, text2):
     return arr[-1][-1]
 
 
-print(longestCommonSubsequence("lcnqdmvsdopkvqvejijcdyxetuzonuhuzkpelmva","bklgfivmpozinybwlovcnafqfybodkhabyrglsnen"))
+print(longestCommonSubsequence('delete', 'leet'))
 
