@@ -3,10 +3,10 @@ def guessNumber(n):
     right = n
     while left <= right:
         mid = (left + right) // 2
-        guess = self.guess(mid)
-        if guess == -1:
+        temp = guess(mid)
+        if temp == -1:
             right = mid -1
-        elif guess == 1:
+        elif temp == 1:
             left = mid + 1
         else:
             return mid
