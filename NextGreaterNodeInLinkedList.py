@@ -1,28 +1,19 @@
-class ListNode(object):
-    def __init__(self, x):
-        self.val = x
-        self.next = None
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
 
-
-class Solution(object):
-    def nextLargerNodes(self, head):
-        """
-        :type head: ListNode
-        :rtype: List[int]
-        """
-        if head is None:
-            return []
-        elif head.next is None:
-            return [0]
-
-        ans = []
-        temp = []
-        index = 0
+class Solution:
+    def nextLargerNodes(self, head: ListNode) -> List[int]:
+        arr = []
         while head:
-            ans.append(0)
-            while len(temp) > 0 and temp[-1][1] < head.val:
-                ans[temp.pop()[0]] = head.val
-            temp.append((index, head.val))
-            index += 1
+            arr.append(head.val)
             head = head.next
+        st = []
+        ans = [0] * len(arr)
+        for i in range(len(arr)):
+            while st and arr[i] > arr[st[-1]]:
+                ans[st.pop()] = arr[i]
+            st.append(i)
         return ans
